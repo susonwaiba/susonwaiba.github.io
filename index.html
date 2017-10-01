@@ -29,9 +29,6 @@
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link scroll" href="#about-me">About Me</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="https://github.com/susonwaiba" target="_blank">Github</a>
 					</li>
 				</ul>
@@ -173,7 +170,7 @@
 						<p>I have been working professionally for more than a year making differences that changed the way of doing things to my clients.</p>
 						<p>I can work with PHP, HTML, CSS, Javascript, Bootstrap, jQuery, WordPress, CodeIgniter, Laravel, Angular, PS, AI, Git, NPM, Composer, VPS, CLI tools etc.</p>
 						<p>The best thing you can get from me is beautiful & well managed codes!</p>
-						<p><a href="https://www.facebook.com/susonwaiba" target="_blank">Facebook</a> | <a href="https://www.linkedin.com/in/susonwaiba" target="_blank">Linkedin</a> | <a href="https://github.com/susonwaiba" target="_blank">Github</a> | <a href="https://bitbucket.org/susonwaiba" target="_blank">Bitbucket</a> | <a href="https://www.fiverr.com/susonwaiba" target="_blank">Fiverr</a></p>
+						<p><a href="https://www.facebook.com/susonwaiba" target="_blank">Facebook</a> | <a href="https://www.linkedin.com/in/susonwaiba" target="_blank">Linkedin</a> | <a href="https://github.com/susonwaiba" target="_blank">Github</a> | <a href="https://www.fiverr.com/susonwaiba" target="_blank">Fiverr</a></p>
 					</div>
 				</div>
 			</div>
@@ -192,10 +189,10 @@
 	<script type="text/javascript" src="js/popper.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript">
-		$('#heroCarousel').carousel(Math.floor(Math.random() * (3 - 0) + 0));
+		$('#heroCarousel').carousel(1);
 		$('#tell-me-more').click(function(event) {
 			event.preventDefault();
-			$('html, body').animate({scrollTop: $("#my-expertise").offset().top - 64},'slow');
+			$('html, body').animate({scrollTop: $("#about-me").offset().top - 64},'slow');
 		});
 		$('.scroll').click(function(event) {
 			event.preventDefault();
