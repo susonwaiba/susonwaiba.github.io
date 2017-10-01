@@ -61,7 +61,7 @@
 				</div>
 
 				<div class="text-center">
-					<a class="btn btn-outline-secondary text-uppercase scroll" href="#my-expertise">Tell Me More</a>
+					<a class="btn btn-outline-secondary text-uppercase scroll" href="#about-me">Tell Me More</a>
 				</div>
 			</div>
 		</div>
@@ -190,10 +190,6 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		$('#heroCarousel').carousel(1);
-		$('#tell-me-more').click(function(event) {
-			event.preventDefault();
-			$('html, body').animate({scrollTop: $("#about-me").offset().top - 64},'slow');
-		});
 		$('.scroll').click(function(event) {
 			event.preventDefault();
 			$('html, body').animate({scrollTop: $($(this).attr('href')).offset().top - 64},'slow');
