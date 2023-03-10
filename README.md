@@ -7,6 +7,7 @@ My personal website project.
 ## Frontend setup
 
 https://github.com/leptos-rs/leptos
+
 https://trunkrs.dev
 
 ```
