@@ -1,6 +1,7 @@
 use crate::api;
 use crate::model::note::NoteItem;
 use leptos::*;
+use leptos_meta::*;
 
 #[component]
 pub fn HomePage(cx: Scope) -> impl IntoView {
@@ -13,6 +14,7 @@ pub fn HomePage(cx: Scope) -> impl IntoView {
     );
 
     view! { cx,
+        <Title text="Suson Waiba - Software developer writing quality software solutions"/>
         <div class="app-container hero-greeting text-center py-12">
             <img src="/assets/logo.svg" width="96px" alt="Logo"/>
             <h1 class="hero-greeting-text">"Hi, I am "<span class="color-primary-text">"Suson Waiba"</span>"."</h1>
