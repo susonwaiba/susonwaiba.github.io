@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container max-w-screen-lg">
+    <div class="text-center mb-16">
+        <div class="py-8">
+            <img src="{{ get_url(path='/logo.svg') }}" alt="Logo" class="w-32 h-32 mx-auto" />
+        </div>
+        <h1 class="font-bold text-2xl md:text-4xl pb-4">Hi, I am <span class="text-primary">Suson Waiba</span>.</h1>
+        <h4 class="text-md md:text-xl">Software developer writing quality software solutions</h4>
+    </div>
+    <div class="flex gap-4 justify-center items-center mb-16">
+        <a class="btn btn-neutral" href="https://github.com/susonwaiba" target="_blank">
+            Github
+        </a>
+        <a class="btn btn-neutral" href="https://www.linkedin.com/in/susonwaiba" target="_blank">
+            Linkedin
+        </a>
+        <a class="btn btn-neutral" href="https://twitter.com/susonwaiba" target="_blank">
+            Twitter
+        </a>
+    </div>
+    <div class="text-center mb-16">
+        <p class="font-light text-xs">I am usually occupied but open to hire, hit me on Linkedin for chat</p>
+    </div>
+</div>
+<div class="bg-base-200 mb-16">
+    <div class="container max-w-screen-lg py-8 text-center">
+        <h3 class="font-bold text-2xl">Recent posts</h3>
+    </div>
+</div>
+<div class="mb-16">
+    <div class="container max-w-screen-lg">
+        <div hx-get="{{ get_url(path='/blog') }}/" hx-swap="outerHTML ignoreTitle:true" hx-select=".page-section-listing-first-2" hx-trigger="load">
+            <div class="text-center mb-16">
+                <span class="loading loading-dots loading-lg"></span>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="{{ get_url(path='/blog') }}/" class="btn btn-primary">View all posts</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

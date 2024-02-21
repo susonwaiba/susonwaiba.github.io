@@ -1,0 +1,17 @@
+{
+  "name": "susonwaiba",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "watch": "npx tailwindcss -i ./style.css -o ./static/style.min.css --watch",
+    "build": "npx tailwindcss -i ./style.css -m -o ./static/style.min.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "daisyui": "^4.6.1",
+    "tailwindcss": "^3.4.1"
+  }
+}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block page_title %}404 Error - {{ config.title }}{% endblock %}
+
+{% block content %}
+<div class="bg-base-200 mb-8">
+    <div class="container max-w-screen-lg py-8 text-center">
+        <h3 class="font-bold text-2xl">404: Page not found</h3>
+    </div>
+</div>
+<div class="container max-w-screen-lg pb-16 text-center">
+  <p class="mb-8">The resource you are requesting doesn't exist.</p>
+  <a class="btn btn-primary" href={{ config.base_url }}>Home</a>
+</div>
+{% endblock content %}

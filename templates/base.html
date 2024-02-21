@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block page_title %}{{ config.extra.long_title }}{% endblock %}</title>
+
+    <meta name="author" content="{{ config.author }}" />
+    <meta name="description" content="{{ config.description }}" />
+    <meta name="keywords"
+        content="Suson Waiba, contract developer, software developer, web developer, Rust, Magento, Symfony, Laravel, WordPress, Woocommerce, HTML, CSS" />
+
+    <meta name="p:domain_verify" content="d982a6d828584d0f82bdadb4674b1fe7" />
+
+    <meta name="og:url" content="{{ get_url(path='') }}" />
+    <meta name="og:type" content="website" />
+    <meta name="og:title" content="{{ config.title }}" />
+    <meta name="og:description" content="{{ config.description }}" />
+    <meta name="og:image" content="{{ get_url(path='/screenshot.png') }}" />
+
+    <meta name="color-scheme" content="dark light" />
+
+    <link rel="icon" href="{{ get_url(path='/favicon.ico') }}">
+
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light')
+        }
+    </script>
+
+    <link href="{{ get_url(path='/style.min.css') }}" rel="stylesheet" />
+
+    <script src="https://unpkg.com/htmx.org@1.9.10"
+        integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+        crossorigin="anonymous"></script>
+
+    <script src="{{ get_url(path='/app.js') }}"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M6Q365MVHJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-M6Q365MVHJ");
+    </script>
+</head>
+
+<body hx-boost="true">
+    {% include 'header.html' %}
+    {% block content %}{% endblock %}
+    {% include 'footer.html' %}
+
+    {% block site_htmx_preserve %}
+    <div id="site-htmx-preserve" hx-preserve="true">
+        <div id="site-htmx-preserve-alert"></div>
+        </div>
+    </div>
+    {% endblock site_htmx_preserve %}
+</body>
+
+</html>

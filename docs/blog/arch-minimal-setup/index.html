@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Suson Waiba - Software developer writing quality software solutions</title>
+    <title>Arch minimal setup - Suson Waiba</title>
 
     <meta name="author" content="Suson Waiba" />
     <meta name="description" content="Software developer writing quality software solutions" />
@@ -92,47 +92,107 @@
 </header>
 
     
-<div class="container max-w-screen-lg">
-    <div class="text-center mb-16">
-        <div class="py-8">
-            <img src="https://susonwaiba.github.io/logo.svg" alt="Logo" class="w-32 h-32 mx-auto" />
-        </div>
-        <h1 class="font-bold text-2xl md:text-4xl pb-4">Hi, I am <span class="text-primary">Suson Waiba</span>.</h1>
-        <h4 class="text-md md:text-xl">Software developer writing quality software solutions</h4>
-    </div>
-    <div class="flex gap-4 justify-center items-center mb-16">
-        <a class="btn btn-neutral" href="https://github.com/susonwaiba" target="_blank">
-            Github
-        </a>
-        <a class="btn btn-neutral" href="https://www.linkedin.com/in/susonwaiba" target="_blank">
-            Linkedin
-        </a>
-        <a class="btn btn-neutral" href="https://twitter.com/susonwaiba" target="_blank">
-            Twitter
-        </a>
-    </div>
-    <div class="text-center mb-16">
-        <p class="font-light text-xs">I am usually occupied but open to hire, hit me on Linkedin for chat</p>
-    </div>
-</div>
-<div class="bg-base-200 mb-16">
-    <div class="container max-w-screen-lg py-8 text-center">
-        <h3 class="font-bold text-2xl">Recent posts</h3>
-    </div>
-</div>
-<div class="mb-16">
-    <div class="container max-w-screen-lg">
-        <div hx-get="https://susonwaiba.github.io/blog/" hx-swap="outerHTML ignoreTitle:true" hx-select=".page-section-listing-first-2" hx-trigger="load">
-            <div class="text-center mb-16">
-                <span class="loading loading-dots loading-lg"></span>
-            </div>
-        </div>
-        <div class="text-center">
-            <a href="https://susonwaiba.github.io/blog/" class="btn btn-primary">View all posts</a>
+<div class="bg-base-200 mb-8">
+    <div class="container max-w-screen-lg py-8">
+        <h1 class="font-bold text-4xl mb-4">Arch minimal setup</h1>
+        <div class="text-sm">
+            <span>3 min read</span>
+            <span>·</span>
+            <span>2023-01-18</span>
         </div>
     </div>
 </div>
+<div id="page-blog-arch-minimal-setup" class="container max-w-screen-lg pb-16">
+    <article class="prose lg:prose-xl max-w-none">
+        <p>While distro hopping, you stumble on Arch and you stick with arch.
+When I moved from <strong>Window</strong> to <strong>Linux</strong> few years ago, I saw significant less memory usage and overall responsive system with same hardware.
+While moving from <strong>Ubuntu</strong> to <strong>Arch</strong>, I saw similar difference. Ubuntu is not that bloated but I just don't want to use snapd for packages.
+Arch Package Repository and Arch User Package Repository is another reason to love Arch.</p>
+<h2 id="how-i-setup-my-arch">How I setup my Arch?</h2>
+<p>Arch doesn't have GUI installation, working with manual terminal based installation is hard work.
+<code>archinstall</code> python tool is very useful for initial setup. It can install all desktop environment with all the dependencies.
+I usually go with <strong>AwesomeWM</strong> as it has minimal footprint.
+Then I install basic packages like <strong>Vim</strong>, <strong>Firefox</strong> and <strong>ansible</strong>.
+I have ansible setup for automatic packages installation.
+Then I login to Github using Firefox and download zip package of my ansible config repository.
+Then with single setup command, ansible will dcrypt and restore my secrets like pem files, start installation of packages and clone all my configs from private github repositories.
+I manage all my configs in their own repositories and push clean changes.
+I also have parallel ansible setup for Ubuntu.</p>
+<h2 id="basic-packages">Basic packages</h2>
+<ul>
+<li>alacritty</li>
+<li>kitty</li>
+<li>lxappearance</li>
+<li>pavucontrol</li>
+<li>arandr</li>
+<li>zip unzip</li>
+<li>openssh</li>
+<li>git</li>
+<li>htop</li>
+<li>neofetch</li>
+<li>vim</li>
+<li>yay</li>
+<li>bob-bin to manage neovim + <code>ripgrep</code>, <code>fd</code> and <code>xclip</code></li>
+<li>tmux</li>
+<li>lazygit</li>
+<li>lf</li>
+<li>pcmanfm</li>
+</ul>
+<h2 id="keybinding">Keybinding</h2>
+<p><strong>AwesomeWM</strong> comes with predefined vim-motion keys.</p>
+<h2 id="package-manager">Package manager</h2>
+<p>I like <code>pacman</code>.</p>
+<p>Similarly, <code>yay</code> is then obiously choice as it has almost same flags.</p>
+<h2 id="fonts">Fonts</h2>
+<ul>
+<li>noto-fonts</li>
+<li>noto-fonts-emoji</li>
+<li>noto-fonts-extra</li>
+<li>otf-cascadia-code-nerd for terminal and neovim</li>
+</ul>
+<h2 id="window-manager">Window manager</h2>
+<p><strong>AwesomeWM</strong> with X server.
+Lua configuration.
+Dynamic tiling window manager.</p>
+<p>GTK and theme.</p>
+<ul>
+<li>pcmanfm and lf</li>
+<li>pavucontrol</li>
+<li>htop</li>
+</ul>
+<h2 id="start-menu">Start menu</h2>
+<ul>
+<li>dmenu</li>
+</ul>
+<h2 id="panel-widgets">Panel widgets</h2>
+<p><strong>awesome-wm-widgets</strong></p>
+<ul>
+<li>Clock widget</li>
+<li>Date and Calender popup widget</li>
+<li>Network usage widget</li>
+</ul>
+<h2 id="multi-monitor-setup">Multi monitor setup</h2>
+<p><code>arandr</code> for GUI client to manage monitor position.</p>
+<h2 id="terminal">Terminal</h2>
+<ul>
+<li>kitty supports font ligatures</li>
+<li>alacritty</li>
+</ul>
+<h2 id="browser">Browser</h2>
+<ul>
+<li>Firefox</li>
+<li>Chrome</li>
+</ul>
+<h2 id="notes">Notes</h2>
+<p><strong>Neovim</strong> is my choice for editor so, I have keybindings to setup wiki using markdown text files.
+I have <code>~/wiki</code> dir setup for markdown files and hosted via private github repo.
+With neovim I have setup scratchpad, new note, search notes via telescope and even diary notes create keybinding to create new file.</p>
+<h2 id="docker">Docker</h2>
+<p>As a software developer, I use docker for most of the stateful services setup and development.
+Along with docker, I also setup language compilers and interpertrs for some languages that I work daily.</p>
 
+    </article>
+</div>
 
     <footer id="site-footer" class="py-16" hx-preserve="true">
     <div class="container max-w-screen-lg">

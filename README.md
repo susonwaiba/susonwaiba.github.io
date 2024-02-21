@@ -4,36 +4,22 @@ URL: https://susonwaiba.github.io
 
 My personal website project.
 
-## Frontend setup
 
-https://github.com/leptos-rs/leptos
+## Quick start
 
-https://trunkrs.dev
+```bash
+just
 
-```
-trunk serve
-```
+just install
+just watch-style
+just serve
 
-## Json generator
-
-```
-cd md_to_json
-cargo run
+just publish
 ```
 
-## Deployment
 
-```
-trunk build --release
+## Links
 
-cp dist/index.html dist/404.html
-cp -r dist docs
-```
-
-Copy `index.html` to `404.html` to use github 404 page overwrite feature.
-
-Copy `dist` to `docs` dir to deploy with default github page action.
-
-Dir `dist` is in .gitignore.
+- https://github.com/getzola/zola
 
 Copyright © Suson Waiba. All rights reserved.

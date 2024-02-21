@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neovim - PDE - Suson Waiba</title>
+
+    <meta name="author" content="Suson Waiba" />
+    <meta name="description" content="Software developer writing quality software solutions" />
+    <meta name="keywords"
+        content="Suson Waiba, contract developer, software developer, web developer, Rust, Magento, Symfony, Laravel, WordPress, Woocommerce, HTML, CSS" />
+
+    <meta name="p:domain_verify" content="d982a6d828584d0f82bdadb4674b1fe7" />
+
+    <meta name="og:url" content="https://susonwaiba.github.io" />
+    <meta name="og:type" content="website" />
+    <meta name="og:title" content="Suson Waiba" />
+    <meta name="og:description" content="Software developer writing quality software solutions" />
+    <meta name="og:image" content="https://susonwaiba.github.io/screenshot.png" />
+
+    <meta name="color-scheme" content="dark light" />
+
+    <link rel="icon" href="https://susonwaiba.github.io/favicon.ico">
+
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light')
+        }
+    </script>
+
+    <link href="https://susonwaiba.github.io/style.min.css" rel="stylesheet" />
+
+    <script src="https://unpkg.com/htmx.org@1.9.10"
+        integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+        crossorigin="anonymous"></script>
+
+    <script src="https://susonwaiba.github.io/app.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M6Q365MVHJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-M6Q365MVHJ");
+    </script>
+</head>
+
+<body hx-boost="true">
+    <header id="site-header" class="py-8" hx-preserve="true">
+    <div class="container max-w-screen-lg">
+        <div class="flex gap-4 justify-center items-center">
+            <a class="btn btn-neutral" href="https://susonwaiba.github.io">
+                Home
+            </a>
+            <a class="btn btn-neutral" href="https://susonwaiba.github.io/about/">
+                About
+            </a>
+            <a class="btn btn-neutral" href="https://susonwaiba.github.io/blog/">
+                Blog
+            </a>
+        </div>
+    </div>
+    <span class="absolute right-1 top-1">
+    <label id="theme-toggle" class="swap swap-rotate btn btn-ghost btn-circle" onClick="window.app.toggleTheme()">
+    <svg id="theme-name-dark" class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24">
+        <path
+            d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+    </svg>
+    <svg id="theme-name-light" class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24">
+        <path
+            d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+    </svg>
+</label>
+<script>
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        window.app.setThemeButtonState('dark');
+    } else {
+        window.app.setThemeButtonState('light');
+    }
+</script>
+
+    </span>
+</header>
+
+    
+<div class="bg-base-200 mb-8">
+    <div class="container max-w-screen-lg py-8">
+        <h1 class="font-bold text-4xl mb-4">Neovim - PDE</h1>
+        <div class="text-sm">
+            <span>7 min read</span>
+            <span>·</span>
+            <span>2023-02-22</span>
+        </div>
+    </div>
+</div>
+<div id="page-blog-neovim-pde" class="container max-w-screen-lg pb-16">
+    <article class="prose lg:prose-xl max-w-none">
+        <p>I just love <strong>neovim</strong>.</p>
+<h2 id="where-i-come-from">Where I come from?</h2>
+<p>As a beginer windows user, obviously I have tried coding in <strong>Notepad</strong>.
+Then I used to use <strong>Notepad++</strong>.
+Then I found <strong>sublime-text</strong> and loved <strong>Monokai</strong> theme.</p>
+<p>Then I started using <strong>Linux</strong> and <strong>Netbeans</strong> with its rich language support and slowness got me.
+Then I started using <strong>Jetbrains IDE</strong>, loved its features then came <strong>vscode</strong>.
+It changed the way I used to use text editor. With LSP, a simple editor got power of IDE.
+With remote development plugins, now it possible to SSH into remote server and use light clients with access to powerful servers.
+<strong>vscode</strong> with <strong>WSL2</strong> started everything then SSH came along.
+Then came quarantine, during those days I used to use old laptop as home lab server and working on remote machine was my everyday.</p>
+<p>Jetbrains IDE was very slow to index my codebases but vscode was also slow.
+vscode also didn't had good support for <strong>PHP</strong> but with <strong>PHP Intelephense</strong> plugin, it is workable.
+I was missing one regulary used feature from Jetbrains IDE (ie Goto Implementation) in vscode with plugins.
+I mostly work on large codebases and there were numerious type of files, vscode was good for multiple language support. Each and every language had rich support, LSP was that good.</p>
+<p>All these years, <strong>vim</strong> was under my nose as editor in server when I am using ssh in terminal I always had vim.
+Using vscode in client server and production server was no go due to node dependencies and <strong>vscode-server</strong> installation. Production server should be isolated and only http port should be opened.
+I have worked on some servers where one must ssh through various tunnels to finally getting into production.</p>
+<h2 id="why-to-configure-neovim">Why to configure neovim?</h2>
+<p>I had to rethink about my code editor choice, then came <strong>neovim</strong> with lua script support, customization and plugins.
+All these years after moving from one primary editor to another and testing numerious editors, I knew what I wanted but configuring neovim exectly was so hard at first.
+I configured my neovim and was missing so many features that I used to get back to vscode at beginer days.</p>
+<p>Then I found <strong>Lunarvim</strong> distro, neovim configuration was like magic.
+Everything is configured for you and most of keybinding are sane and workable.
+I still suggest beginer to use <strong>Lunarvim</strong> until you want or need to create your own config.
+It also uses separate neovim files dir living with your own neovim config. Then one can use both and keep configuring own config until one can migrate.
+It allows you to configure that you don't like about it and all updates are maintained by distro maintainers.
+I have use neovim for long time to see plugins deprecated and rise of suggestion for similar plugins, plugin manager changes and lots of LSP changes and updates.
+With preconfigured neovim distro, there comes numerious features that you use or don't use. And keybindings that you don't remember.</p>
+<p>There is concept of <strong>Personal Development Environment (PDE)</strong>. And I got fond of it.
+Ultimately as I use my editor all the time to code my projects, it makes sense to code my editor as well or atlease configure it to my liking.
+I got my hand issues, typing issues and I am brust typer. So, I configured my neovim according to it.</p>
+<h2 id="neovim-version-manager">Neovim version manager</h2>
+<ul>
+<li>bob-bin</li>
+</ul>
+<h2 id="package-manager">Package manager</h2>
+<ul>
+<li>lazy.nvim</li>
+</ul>
+<h2 id="plugins">Plugins</h2>
+<ul>
+<li>
+<p>nvim-telescope/telescope.nvim</p>
+</li>
+<li>
+<p>voldikss/vim-floaterm</p>
+</li>
+<li>
+<p>nvim-treesitter/nvim-treesitter</p>
+</li>
+<li>
+<p>theprimeagen/harpoon</p>
+</li>
+<li>
+<p>mbbill/undotree</p>
+</li>
+<li>
+<p>tpope/vim-fugitive</p>
+</li>
+<li>
+<p>lewis6991/gitsigns.nvim</p>
+</li>
+<li>
+<p>sindrets/diffview.nvim</p>
+</li>
+<li>
+<p>VonHeikemen/lsp-zero.nvim</p>
+</li>
+<li>
+<p>williamboman/mason.nvim</p>
+</li>
+<li>
+<p>jose-elias-alvarez/null-ls.nvim</p>
+</li>
+<li>
+<p>jayp0521/mason-null-ls.nvim</p>
+</li>
+<li>
+<p>ray-x/lsp_signature.nvim</p>
+</li>
+<li>
+<p>folke/troble.nvim</p>
+</li>
+<li>
+<p>github/copilot.vim</p>
+</li>
+<li>
+<p>mfussenegger/nvim-dap</p>
+</li>
+<li>
+<p>rcarriga/nvim-dap-ui</p>
+</li>
+<li>
+<p>numToStr/Comment.nvim</p>
+</li>
+<li>
+<p>JoosepAlviste/nvim-ts-context-commentstring</p>
+</li>
+<li>
+<p>windwp/nvim-autopairs</p>
+</li>
+<li>
+<p>lukas-reineke/indent-blankline.nvim</p>
+</li>
+<li>
+<p>tpope/vim-sleuth</p>
+</li>
+<li>
+<p>folke/neodev.nvim</p>
+</li>
+<li>
+<p>ellisonleao/glow.nvim</p>
+</li>
+<li>
+<p>nvim-lualine/lualine.nvim</p>
+</li>
+<li>
+<p>j-hui/fidget.nvim</p>
+</li>
+<li>
+<p>folke/todo-comments.nvim</p>
+</li>
+<li>
+<p>tpope/vim-dadbod</p>
+</li>
+<li>
+<p>kristijanhusak/vim-dadbod-ui</p>
+</li>
+<li>
+<p>tamago324/lir.nvim</p>
+</li>
+<li>
+<p>folke/which-key.nvim</p>
+</li>
+</ul>
+<h2 id="themes">Themes</h2>
+<ul>
+<li>
+<p>folke/tokyonight.nvim</p>
+</li>
+<li>
+<p>rose-pine/neovim</p>
+</li>
+<li>
+<p>catppuccin/nvim</p>
+</li>
+</ul>
+<h2 id="autocmd">Autocmd</h2>
+<ul>
+<li>highlight on yank</li>
+</ul>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#b48ead;">local </span><span style="color:#bf616a;">highlight_group </span><span>= </span><span style="color:#bf616a;">vim</span><span>.api.</span><span style="color:#bf616a;">nvim_create_augroup</span><span>(&#39;</span><span style="color:#a3be8c;">YankHighlight</span><span>&#39;, { </span><span style="color:#a3be8c;">clear </span><span>= </span><span style="color:#d08770;">true </span><span>})
+</span><span style="color:#bf616a;">vim</span><span>.api.</span><span style="color:#bf616a;">nvim_create_autocmd</span><span>(&#39;</span><span style="color:#a3be8c;">TextYankPost</span><span>&#39;, {
+</span><span>	</span><span style="color:#8fa1b3;">callback </span><span>= </span><span style="color:#b48ead;">function</span><span>()
+</span><span>		</span><span style="color:#bf616a;">vim</span><span>.highlight.</span><span style="color:#bf616a;">on_yank</span><span>()
+</span><span>	</span><span style="color:#b48ead;">end</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">group </span><span>= </span><span style="color:#bf616a;">highlight_group</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">pattern </span><span>= &#39;</span><span style="color:#a3be8c;">*</span><span>&#39;,
+</span><span>})
+</span></code></pre>
+<ul>
+<li>Different indent for file type</li>
+</ul>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#bf616a;">vim</span><span>.api.</span><span style="color:#bf616a;">nvim_command </span><span>[[
+</span><span style="color:#a3be8c;">	autocmd FileType json,js,jsx,javascript,ts,tsx,typescript,typescriptreact,css,less,scss set tabstop=2
+</span><span>]]
+</span></code></pre>
+<ul>
+<li>auto indent bug fix for PHP</li>
+</ul>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#bf616a;">vim</span><span>.api.</span><span style="color:#bf616a;">nvim_create_autocmd</span><span>({ &quot;</span><span style="color:#a3be8c;">BufWinEnter</span><span>&quot; }, {
+</span><span>	</span><span style="color:#8fa1b3;">callback </span><span>= </span><span style="color:#b48ead;">function</span><span>()
+</span><span>		</span><span style="color:#bf616a;">vim</span><span>.</span><span style="color:#bf616a;">cmd </span><span>&quot;</span><span style="color:#a3be8c;">set autoindent</span><span>&quot;
+</span><span>	</span><span style="color:#b48ead;">end
+</span><span>})
+</span></code></pre>
+<h2 id="keybinding">Keybinding</h2>
+<p>I use which-key for keymap documentation.</p>
+<ul>
+<li>Save current buffer</li>
+</ul>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">i</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;C-s&gt;</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;Esc&gt;:w&lt;CR&gt;</span><span>&quot;)
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;C-s&gt;</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">:w&lt;CR&gt;</span><span>&quot;)
+</span></code></pre>
+<ul>
+<li>lir explorer</li>
+</ul>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;e</span><span>&quot;, [[</span><span style="color:#a3be8c;">&lt;Cmd&gt;execute &#39;e &#39; .. expand(&#39;%:p:h&#39;)&lt;CR&gt;</span><span>]], { </span><span style="color:#a3be8c;">noremap </span><span>= </span><span style="color:#d08770;">true</span><span>, </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Explore</span><span>&quot; })
+</span><span style="color:#bf616a;">vim</span><span>.api.</span><span style="color:#bf616a;">nvim_set_keymap</span><span>(
+</span><span>	&#39;</span><span style="color:#a3be8c;">n</span><span>&#39;,
+</span><span>	&#39;</span><span style="color:#a3be8c;">-</span><span>&#39;,
+</span><span>	[[</span><span style="color:#a3be8c;">&lt;Cmd&gt;execute &#39;e &#39; .. expand(&#39;%:p:h&#39;)&lt;CR&gt;</span><span>]],
+</span><span>	{ </span><span style="color:#a3be8c;">noremap </span><span>= </span><span style="color:#d08770;">true </span><span>}
+</span><span>)
+</span></code></pre>
+<ul>
+<li>harpoon</li>
+</ul>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#96b5b4;">require</span><span>(&quot;</span><span style="color:#a3be8c;">harpoon</span><span>&quot;).</span><span style="color:#bf616a;">setup</span><span>({
+</span><span>	</span><span style="color:#a3be8c;">menu </span><span>= {
+</span><span>		</span><span style="color:#a3be8c;">width </span><span>= </span><span style="color:#bf616a;">vim</span><span>.api.</span><span style="color:#bf616a;">nvim_win_get_width</span><span>(</span><span style="color:#d08770;">0</span><span>) - </span><span style="color:#d08770;">100</span><span>,
+</span><span>	}
+</span><span>})
+</span><span>
+</span><span style="color:#b48ead;">local </span><span style="color:#bf616a;">mark </span><span>= </span><span style="color:#96b5b4;">require</span><span>(&quot;</span><span style="color:#a3be8c;">harpoon.mark</span><span>&quot;)
+</span><span style="color:#b48ead;">local </span><span style="color:#bf616a;">ui </span><span>= </span><span style="color:#96b5b4;">require</span><span>(&quot;</span><span style="color:#a3be8c;">harpoon.ui</span><span>&quot;)
+</span><span>
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;C-m&gt;</span><span>&quot;, </span><span style="color:#bf616a;">mark</span><span>.add_file, { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Add to harpoon</span><span>&quot; })
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;C-h&gt;</span><span>&quot;, </span><span style="color:#bf616a;">ui</span><span>.toggle_quick_menu, { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Harpoon menu</span><span>&quot; })
+</span><span>
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;C-j&gt;</span><span>&quot;, </span><span style="color:#b48ead;">function </span><span>() </span><span style="color:#bf616a;">ui</span><span>.</span><span style="color:#bf616a;">nav_file</span><span>(</span><span style="color:#d08770;">1</span><span>) </span><span style="color:#b48ead;">end</span><span>)
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;C-k&gt;</span><span>&quot;, </span><span style="color:#b48ead;">function </span><span>() </span><span style="color:#bf616a;">ui</span><span>.</span><span style="color:#bf616a;">nav_file</span><span>(</span><span style="color:#d08770;">2</span><span>) </span><span style="color:#b48ead;">end</span><span>)
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;C-l&gt;</span><span>&quot;, </span><span style="color:#b48ead;">function </span><span>() </span><span style="color:#bf616a;">ui</span><span>.</span><span style="color:#bf616a;">nav_file</span><span>(</span><span style="color:#d08770;">3</span><span>) </span><span style="color:#b48ead;">end</span><span>)
+</span></code></pre>
+<ul>
+<li>Floaterm</li>
+</ul>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;gg</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;FloatermNew --width=0.99 --height=0.99 lazygit&lt;CR&gt;</span><span>&quot;, { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Lazygit</span><span>&quot; })
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;E</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;FloatermNew --width=0.99 --height=0.99 lf&lt;CR&gt;</span><span>&quot;, { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">LF</span><span>&quot; })
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;t</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;FloatermNew --width=0.99 --height=0.99 bash&lt;CR&gt;</span><span>&quot;, { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Terminal</span><span>&quot; })
+</span></code></pre>
+<ul>
+<li>Wiki</li>
+</ul>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;wf</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;Telescope find_files cwd=~/wiki/&lt;cr&gt;</span><span>&quot;, { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Find File</span><span>&quot; })
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;wg</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;Telescope live_grep cwd=~/wiki/&lt;cr&gt;</span><span>&quot;, { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Grep</span><span>&quot; })
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;wq</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;e ~/wiki/quick-note.md&lt;cr&gt;</span><span>&quot;, { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Quick note</span><span>&quot; })
+</span><span>
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;wt</span><span>&quot;, string.</span><span style="color:#96b5b4;">format</span><span>(&quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;e ~/wiki/diary/%s/%s.md&lt;cr&gt;</span><span>&quot;, os.</span><span style="color:#96b5b4;">date</span><span>(&quot;</span><span style="color:#a3be8c;">%Y</span><span>&quot;), os.</span><span style="color:#96b5b4;">date</span><span>(&quot;</span><span style="color:#a3be8c;">%Y-%m-%d</span><span>&quot;)), { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Today note</span><span>&quot; })
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;wT</span><span>&quot;, string.</span><span style="color:#96b5b4;">format</span><span>(&quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;e ~/wiki/diary/%s/%s.md&lt;cr&gt;</span><span>&quot;, os.</span><span style="color:#96b5b4;">date</span><span>(&quot;</span><span style="color:#a3be8c;">%Y</span><span>&quot;), os.</span><span style="color:#96b5b4;">date</span><span>(&quot;</span><span style="color:#a3be8c;">%Y-%m-%d</span><span>&quot;), os.</span><span style="color:#96b5b4;">time</span><span>() + </span><span style="color:#d08770;">24 </span><span>* </span><span style="color:#d08770;">60 </span><span>* </span><span style="color:#d08770;">60</span><span>), { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Tomorrow note</span><span>&quot; })
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;wy</span><span>&quot;, string.</span><span style="color:#96b5b4;">format</span><span>(&quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;e ~/wiki/diary/%s/%s.md&lt;cr&gt;</span><span>&quot;, os.</span><span style="color:#96b5b4;">date</span><span>(&quot;</span><span style="color:#a3be8c;">%Y</span><span>&quot;), os.</span><span style="color:#96b5b4;">date</span><span>(&quot;</span><span style="color:#a3be8c;">%Y-%m-%d</span><span>&quot;), os.</span><span style="color:#96b5b4;">time</span><span>() - </span><span style="color:#d08770;">24 </span><span>* </span><span style="color:#d08770;">60 </span><span>* </span><span style="color:#d08770;">60</span><span>), { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Yesterday note</span><span>&quot; })
+</span><span>
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;wdf</span><span>&quot;, string.</span><span style="color:#96b5b4;">format</span><span>(&quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;Telescope find_files cwd=~/wiki/diary/%s/&lt;cr&gt;</span><span>&quot;, os.</span><span style="color:#96b5b4;">date</span><span>(&quot;</span><span style="color:#a3be8c;">%Y</span><span>&quot;)), { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Find diary year</span><span>&quot; })
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;wdF</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;Telescope find_files cwd=~/wiki/diary/&lt;cr&gt;</span><span>&quot;, { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Find all diary</span><span>&quot; })
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;wdg</span><span>&quot;, string.</span><span style="color:#96b5b4;">format</span><span>(&quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;Telescope live_grep cwd=~/wiki/diary/%s/&lt;cr&gt;</span><span>&quot;, os.</span><span style="color:#96b5b4;">date</span><span>(&quot;</span><span style="color:#a3be8c;">%Y</span><span>&quot;)), { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Grep diary year</span><span>&quot; })
+</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;wdG</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;Telescope live_grep cwd=~/wiki/diary/&lt;cr&gt;</span><span>&quot;, { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Grep all diary</span><span>&quot; })
+</span></code></pre>
+<ul>
+<li>Custom build key</li>
+</ul>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;Space&gt;b</span><span>&quot;, &#39;</span><span style="color:#a3be8c;">:! cd md_to_json &amp;&amp; cargo run&lt;CR&gt;</span><span>&#39;, { </span><span style="color:#a3be8c;">desc </span><span>= &quot;</span><span style="color:#a3be8c;">Build</span><span>&quot; })
+</span></code></pre>
+<h2 id="lsp">LSP</h2>
+<p>I use <strong>Mason</strong> to manage LSP, DAP, Linter and Formatter related plugins.
+I use <strong>lsp-zero</strong> to auto configure all LSP.
+<strong>cmp</strong> is another thing that need to be configured with LSP.
+I use <strong>mason-null-ls</strong> to help with formatter configuration.</p>
+<p>I use <strong>PHP</strong> with <strong>phpactor</strong> and it doesnot have formatter so, I use <strong>null-ls</strong> to configure <strong>phpcsfixer</strong> to format PHP files.</p>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#96b5b4;">require</span><span>(&#39;</span><span style="color:#a3be8c;">mason.settings</span><span>&#39;).</span><span style="color:#bf616a;">set</span><span>({
+</span><span>	</span><span style="color:#a3be8c;">ui </span><span>= {
+</span><span>		</span><span style="color:#a3be8c;">border </span><span>= &#39;</span><span style="color:#a3be8c;">rounded</span><span>&#39;
+</span><span>	}
+</span><span>})
+</span><span>
+</span><span style="color:#b48ead;">local </span><span style="color:#bf616a;">lsp </span><span>= </span><span style="color:#96b5b4;">require</span><span>(&#39;</span><span style="color:#a3be8c;">lsp-zero</span><span>&#39;)
+</span><span>
+</span><span style="color:#bf616a;">lsp</span><span>.</span><span style="color:#bf616a;">preset</span><span>(&#39;</span><span style="color:#a3be8c;">recommended</span><span>&#39;)
+</span><span>
+</span><span style="color:#bf616a;">lsp</span><span>.</span><span style="color:#bf616a;">ensure_installed</span><span>({})
+</span><span>
+</span><span style="color:#bf616a;">lsp</span><span>.</span><span style="color:#bf616a;">nvim_workspace</span><span>()
+</span><span>
+</span><span style="color:#b48ead;">local </span><span style="color:#bf616a;">cmp </span><span>= </span><span style="color:#96b5b4;">require</span><span>(&#39;</span><span style="color:#a3be8c;">cmp</span><span>&#39;)
+</span><span style="color:#b48ead;">local </span><span style="color:#bf616a;">cmp_select </span><span>= { </span><span style="color:#a3be8c;">behavior </span><span>= </span><span style="color:#bf616a;">cmp</span><span>.SelectBehavior.Select }
+</span><span style="color:#b48ead;">local </span><span style="color:#bf616a;">cmp_mappings </span><span>= </span><span style="color:#bf616a;">lsp</span><span>.defaults.</span><span style="color:#bf616a;">cmp_mappings</span><span>({
+</span><span>	[&#39;</span><span style="color:#a3be8c;">&lt;C-p&gt;</span><span>&#39;] = </span><span style="color:#bf616a;">cmp</span><span>.mapping.</span><span style="color:#bf616a;">select_prev_item</span><span>(</span><span style="color:#bf616a;">cmp_select</span><span>),
+</span><span>	[&#39;</span><span style="color:#a3be8c;">&lt;C-n&gt;</span><span>&#39;] = </span><span style="color:#bf616a;">cmp</span><span>.mapping.</span><span style="color:#bf616a;">select_next_item</span><span>(</span><span style="color:#bf616a;">cmp_select</span><span>),
+</span><span>	[&#39;</span><span style="color:#a3be8c;">&lt;C-y&gt;</span><span>&#39;] = </span><span style="color:#bf616a;">cmp</span><span>.mapping.</span><span style="color:#bf616a;">confirm</span><span>({ </span><span style="color:#a3be8c;">select </span><span>= </span><span style="color:#d08770;">true </span><span>}),
+</span><span>	[&#39;</span><span style="color:#a3be8c;">&lt;C-Space</span><span>&#39;] = </span><span style="color:#bf616a;">cmp</span><span>.mapping.</span><span style="color:#bf616a;">complete</span><span>(),
+</span><span>})
+</span><span>
+</span><span style="color:#bf616a;">lsp</span><span>.</span><span style="color:#bf616a;">setup_nvim_cmp</span><span>({
+</span><span>	</span><span style="color:#a3be8c;">mapping </span><span>= </span><span style="color:#bf616a;">cmp_mappings</span><span>,
+</span><span>})
+</span><span>
+</span><span style="color:#bf616a;">lsp</span><span>.</span><span style="color:#bf616a;">set_preferences</span><span>({
+</span><span>	</span><span style="color:#a3be8c;">suggest_lsp_servers </span><span>= </span><span style="color:#d08770;">true</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">setup_servers_on_start </span><span>= </span><span style="color:#d08770;">true</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">set_lsp_keymaps </span><span>= </span><span style="color:#d08770;">false</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">configure_diagnostics </span><span>= </span><span style="color:#d08770;">true</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">cmp_capabilities </span><span>= </span><span style="color:#d08770;">true</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">manage_nvim_cmp </span><span>= </span><span style="color:#d08770;">true</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">call_servers </span><span>= &#39;</span><span style="color:#a3be8c;">local</span><span>&#39;,
+</span><span>	</span><span style="color:#a3be8c;">sign_icons </span><span>= {
+</span><span>		</span><span style="color:#a3be8c;">error </span><span>= &#39;</span><span style="color:#a3be8c;">✘</span><span>&#39;,
+</span><span>		</span><span style="color:#a3be8c;">warn </span><span>= &#39;</span><span style="color:#a3be8c;">▲</span><span>&#39;,
+</span><span>		</span><span style="color:#a3be8c;">hint </span><span>= &#39;</span><span style="color:#a3be8c;">⚑</span><span>&#39;,
+</span><span>		</span><span style="color:#a3be8c;">info </span><span>= &#39;</span><span style="color:#a3be8c;"></span><span>&#39;
+</span><span>	}
+</span><span>})
+</span><span>
+</span><span style="color:#bf616a;">lsp</span><span>.</span><span style="color:#bf616a;">on_attach</span><span>(</span><span style="color:#b48ead;">function</span><span>(client, bufnr)
+</span><span>	</span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">client</span><span>.name == &quot;</span><span style="color:#a3be8c;">phpcsfixer</span><span>&quot; </span><span style="color:#b48ead;">then
+</span><span>		</span><span style="color:#bf616a;">client</span><span>.server_capabilities.documentFormattingProvider = </span><span style="color:#d08770;">false </span><span style="color:#65737e;">-- 0.8 and later
+</span><span>	</span><span style="color:#b48ead;">end
+</span><span>    </span><span style="color:#b48ead;">local </span><span style="color:#8fa1b3;">nmap </span><span>= </span><span style="color:#b48ead;">function</span><span>(keys, func, desc)
+</span><span>		</span><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&#39;</span><span style="color:#a3be8c;">n</span><span>&#39;, </span><span style="color:#bf616a;">keys</span><span>, </span><span style="color:#bf616a;">func</span><span>, { </span><span style="color:#a3be8c;">buffer </span><span>= </span><span style="color:#bf616a;">bufnr</span><span>, </span><span style="color:#a3be8c;">desc </span><span>= </span><span style="color:#bf616a;">desc </span><span>})
+</span><span>	</span><span style="color:#b48ead;">end
+</span><span>
+</span><span>	</span><span style="color:#bf616a;">nmap</span><span>(&quot;</span><span style="color:#a3be8c;">&lt;leader&gt;lf</span><span>&quot;, </span><span style="color:#b48ead;">function</span><span>() </span><span style="color:#bf616a;">vim</span><span>.lsp.buf.</span><span style="color:#bf616a;">format</span><span>({ </span><span style="color:#a3be8c;">async </span><span>= </span><span style="color:#d08770;">true </span><span>}) </span><span style="color:#b48ead;">end</span><span>, &quot;</span><span style="color:#a3be8c;">Format</span><span>&quot;)
+</span><span>
+</span><span>    </span><span style="color:#65737e;">-- other things...
+</span><span style="color:#b48ead;">end</span><span>)
+</span><span>
+</span><span style="color:#bf616a;">lsp</span><span>.</span><span style="color:#bf616a;">setup</span><span>()
+</span><span>
+</span><span style="color:#bf616a;">vim</span><span>.diagnostic.</span><span style="color:#bf616a;">config</span><span>({
+</span><span>	</span><span style="color:#a3be8c;">virtual_text </span><span>= </span><span style="color:#d08770;">true</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">signs </span><span>= </span><span style="color:#d08770;">true</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">update_in_insert </span><span>= </span><span style="color:#d08770;">false</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">underline </span><span>= </span><span style="color:#d08770;">true</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">severity_sort </span><span>= </span><span style="color:#d08770;">false</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">float </span><span>= </span><span style="color:#d08770;">true</span><span>,
+</span><span>})
+</span><span>
+</span><span style="color:#b48ead;">local </span><span style="color:#bf616a;">mason_nullls </span><span>= </span><span style="color:#96b5b4;">require</span><span>(&quot;</span><span style="color:#a3be8c;">mason-null-ls</span><span>&quot;)
+</span><span>
+</span><span style="color:#bf616a;">mason_nullls</span><span>.</span><span style="color:#bf616a;">setup</span><span>({
+</span><span>	</span><span style="color:#a3be8c;">debug </span><span>= </span><span style="color:#d08770;">true</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">automatic_installation </span><span>= </span><span style="color:#d08770;">true</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">automatic_setup </span><span>= </span><span style="color:#d08770;">true</span><span>,
+</span><span>})
+</span><span>
+</span><span style="color:#b48ead;">local </span><span style="color:#bf616a;">null_ls </span><span>= </span><span style="color:#96b5b4;">require</span><span>(&quot;</span><span style="color:#a3be8c;">null-ls</span><span>&quot;);
+</span><span style="color:#bf616a;">null_ls</span><span>.</span><span style="color:#bf616a;">setup</span><span>({
+</span><span>	</span><span style="color:#a3be8c;">debug </span><span>= </span><span style="color:#d08770;">true</span><span>,
+</span><span>	</span><span style="color:#a3be8c;">sources </span><span>= {
+</span><span>		</span><span style="color:#bf616a;">null_ls</span><span>.builtins.formatting.phpcsfixer.</span><span style="color:#bf616a;">with</span><span>({
+</span><span>			</span><span style="color:#a3be8c;">filetypes </span><span>= { &quot;</span><span style="color:#a3be8c;">html</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">php</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">phtml</span><span>&quot; },
+</span><span>		}),
+</span><span>	}
+</span><span>})
+</span><span>
+</span><span style="color:#bf616a;">mason_nullls</span><span>.</span><span style="color:#bf616a;">setup_handlers</span><span>()
+</span><span>
+</span><span style="color:#96b5b4;">require </span><span>&quot;</span><span style="color:#a3be8c;">lsp_signature</span><span>&quot;.</span><span style="color:#bf616a;">setup</span><span>({})
+</span></code></pre>
+<p>DAP can also be configured also with LSP.</p>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#b48ead;">local </span><span style="color:#bf616a;">dap </span><span>= </span><span style="color:#96b5b4;">require</span><span>(&#39;</span><span style="color:#a3be8c;">dap</span><span>&#39;)
+</span><span style="color:#bf616a;">dap</span><span>.adapters.php = {
+</span><span>	</span><span style="color:#a3be8c;">type </span><span>= &#39;</span><span style="color:#a3be8c;">executable</span><span>&#39;,
+</span><span>	</span><span style="color:#a3be8c;">command </span><span>= &#39;</span><span style="color:#a3be8c;">node</span><span>&#39;,
+</span><span>	</span><span style="color:#a3be8c;">args </span><span>= { os.</span><span style="color:#96b5b4;">getenv</span><span>(&quot;</span><span style="color:#a3be8c;">HOME</span><span>&quot;) .. &quot;</span><span style="color:#a3be8c;">/.local/share/nvim/mason/packages/php-debug-adapter/extension/out/phpDebug.js</span><span>&quot; }
+</span><span>}
+</span><span>
+</span><span style="color:#bf616a;">dap</span><span>.configurations.php = {
+</span><span>	{
+</span><span>		</span><span style="color:#a3be8c;">type </span><span>= &#39;</span><span style="color:#a3be8c;">php</span><span>&#39;,
+</span><span>		</span><span style="color:#a3be8c;">request </span><span>= &#39;</span><span style="color:#a3be8c;">launch</span><span>&#39;,
+</span><span>		</span><span style="color:#a3be8c;">name </span><span>= &#39;</span><span style="color:#a3be8c;">Listen for Xdebug</span><span>&#39;,
+</span><span>		</span><span style="color:#a3be8c;">hostname </span><span>= &#39;</span><span style="color:#a3be8c;">fpm</span><span>&#39;,
+</span><span>		</span><span style="color:#a3be8c;">port </span><span>= </span><span style="color:#d08770;">9000
+</span><span>	}
+</span><span>}
+</span><span>
+</span><span style="color:#96b5b4;">require</span><span>(&quot;</span><span style="color:#a3be8c;">dapui</span><span>&quot;).</span><span style="color:#bf616a;">setup</span><span>()
+</span></code></pre>
+<p>Trouble</p>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#bf616a;">vim</span><span>.keymap.</span><span style="color:#bf616a;">set</span><span>(&quot;</span><span style="color:#a3be8c;">n</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;leader&gt;xx</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">&lt;cmd&gt;TroubleToggle&lt;cr&gt;</span><span>&quot;,
+</span><span>	{ </span><span style="color:#a3be8c;">silent </span><span>= </span><span style="color:#d08770;">true</span><span>, </span><span style="color:#a3be8c;">noremap </span><span>= </span><span style="color:#d08770;">true </span><span>}
+</span><span>)
+</span></code></pre>
+
+    </article>
+</div>
+
+    <footer id="site-footer" class="py-16" hx-preserve="true">
+    <div class="container max-w-screen-lg">
+        <div class="flex gap-4 justify-center items-center">
+            <p>Copyright © Suson Waiba. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <div id="site-htmx-preserve" hx-preserve="true">
+        <div id="site-htmx-preserve-alert"></div>
+        </div>
+    </div>
+    
+</body>
+
+</html>

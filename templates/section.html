@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block page_title %}{{ section.title }} - {{ config.title }}{% endblock %}
+
+{% block content %}
+<div class="bg-base-200 mb-8">
+    <div class="container max-w-screen-lg py-8 text-center">
+        <h3 class="font-bold text-2xl">{{ section.title }}</h3>
+    </div>
+</div>
+<div id="page-section-{{ section.path | slugify }}" class="container max-w-screen-lg pb-16">
+    <div class="page-section-listing">
+        <div class="flex flex-col gap-8 mb-8 page-section-listing-first-2">
+            {% for page in paginator.pages %}
+            {% if loop.index == 3 %}
+        </div>
+        <div class="flex flex-col gap-8 mb-8 page-section-listing-rest">
+            {% endif %}
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h2 class="card-title text-2xl">{{ page.title }}</h2>
+                    <div class="text-sm">
+                        <span>{{ page.reading_time }} min read</span>
+                        <span>·</span>
+                        <span>{{ page.date }}</span>
+                    </div>
+                    <p>{{ page.description }}</p>
+                    <div>
+                        {% if page.taxonomies.tags and page.taxonomies.tags | length > 0 %}
+                        {% for tag in page.taxonomies.tags %}
+                        {% set tag_slug = tag | slugify %}
+                        <a class="badge badge-neutral shadow-sm" href="{{ get_url(path='/tags/'~tag_slug) }}/">{{ tag }}</a>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div class="card-actions justify-end">
+                        <a class="btn btn-primary" href="{{ page.permalink | safe }}">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="text-center mb-4">
+        {{ paginator.current_index }} / {{ paginator.number_pagers }}
+    </div>
+    <div class="flex justify-center">
+        {% if paginator.number_pagers > 1 %}
+        <div class="join">
+            {% for i in range(start=1, step_by=1, end=paginator.number_pagers + 1) %}
+            {% if i == 1 %}
+            <a class="join-item btn {% if i == paginator.current_index %}btn-active{% endif %}" href="{{ paginator.first }}">
+                {{ i }}
+            </a>
+            {% else %}
+            <a class="join-item btn {% if i == paginator.current_index %}btn-active{% endif %}" href="{{ paginator.base_url ~ i }}">
+                {{ i }}
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
