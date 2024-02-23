@@ -18,4 +18,4 @@ copy-public-to-dist:
     rm -rf docs
     cp -r public docs
 
-publish: build copy-public-to-dist
+release: build copy-public-to-dist

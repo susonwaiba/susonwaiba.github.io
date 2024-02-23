@@ -14,12 +14,16 @@ just install
 just watch-style
 just serve
 
-just publish
+just release
 ```
 
 
 ## Links
 
 - https://github.com/getzola/zola
+- https://github.com/tailwindlabs/tailwindcss
+- https://github.com/saadeghi/daisyui
+- https://github.com/bigskysoftware/htmx
+
 
 Copyright © Suson Waiba. All rights reserved.
