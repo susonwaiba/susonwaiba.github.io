@@ -350,3 +350,5 @@ vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
 	{ silent = true, noremap = true }
 )
 ```
+
+All my config are in github repository: [https://github.com/susonwaiba/.dotfiles](https://github.com/susonwaiba/.dotfiles)

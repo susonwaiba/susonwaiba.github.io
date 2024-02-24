@@ -108,3 +108,5 @@ With neovim I have setup scratchpad, new note, search notes via telescope and ev
 
 As a software developer, I use docker for most of the stateful services setup and development.
 Along with docker, I also setup language compilers and interpertrs for some languages that I work daily.
+
+All my config are in github repository: [https://github.com/susonwaiba/.dotfiles](https://github.com/susonwaiba/.dotfiles)
