@@ -13,9 +13,3 @@ watch-style:
 build:
     npm run build
     zola build --base-url https://susonwaiba.github.io
-
-copy-public-to-dist:
-    rm -rf docs
-    cp -r public docs
-
-release: build copy-public-to-dist

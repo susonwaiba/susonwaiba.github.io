@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "watch": "npx tailwindcss -i ./style.css -o ./static/style.min.css --watch",
-    "build": "npx tailwindcss -i ./style.css -m -o ./static/style.min.css",
+    "watch": "npx tailwindcss -i ./style.css -o ./static/style.css --watch",
+    "build": "npx tailwindcss -i ./style.css -o ./static/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
