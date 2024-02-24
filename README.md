@@ -14,9 +14,8 @@ just install
 just watch-style
 just serve
 
-just release
+just build
 ```
-
 
 ## Links
 
@@ -24,6 +23,7 @@ just release
 - https://github.com/tailwindlabs/tailwindcss
 - https://github.com/saadeghi/daisyui
 - https://github.com/bigskysoftware/htmx
+- https://github.com/shalzz/zola-deploy-action
 
 
 Copyright © Suson Waiba. All rights reserved.
