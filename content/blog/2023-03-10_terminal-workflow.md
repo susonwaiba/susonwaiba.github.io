@@ -61,4 +61,17 @@ I need some way to move around easily and work on different systems.
 - ssh
 - neovim
 
+## my-bash-jazz
+
+[https://github.com/susonwaiba/my-bash-jazz](https://github.com/susonwaiba/my-bash-jazz)
+
+- my-tmux-session
+
+[![asciicast](https://asciinema.org/a/588405.svg)](https://asciinema.org/a/588405)
+
+- my-ssh
+
+[![asciicast](https://asciinema.org/a/588404.svg)](https://asciinema.org/a/588404)
+
+
 All my config are in github repository: [https://github.com/susonwaiba/.dotfiles](https://github.com/susonwaiba/.dotfiles)
